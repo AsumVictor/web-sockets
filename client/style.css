@@ -1,0 +1,77 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(16, 6, 51);
+}
+
+.container {
+  height: 96vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.215);
+  border-radius: 10px;
+  backdrop-filter: blur(300px);
+  -webkit-backdrop-filter: blur(20px);
+  -o-backdrop-filter: blur(20px);
+  -moz-backdrop-filter: blur(20px);
+  position: relative;
+}
+
+.bottom_input {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.bottom_input input {
+  width: 90%;
+  outline: none;
+  padding: 6px 4px;
+}
+
+.bottom_input .room {
+    width: 90%;
+    outline: none;
+    padding: 6px 4px;
+  }
+  
+
+.bottom_input button {
+  width: 30%;
+  outline: none;
+  padding: 6px 4px;
+  background-color: black;
+  color: whitesmoke;
+}
+
+.chat-space {
+  background-color: transparent;
+  height: 100%;
+  width: 95%;
+  display: flex;
+  padding: 25px;
+  flex-direction: column;
+  gap: 2;
+}
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+
+.white {
+    color: white;
+}
+
+.green {
+    color: green;
+}
