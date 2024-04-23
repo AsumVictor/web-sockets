@@ -8,8 +8,8 @@ const io = socketIO(4000, {
 io.on("connection", (socket) => {
   console.log(`New connection with ID: ${socket.id}`);
 
-  socket.on("custom-event", (data) => {
-    console.log(data.name);
+  socket.on("send-message", (message) => {
+     socket.broadcast.emit("recieve-message", message);
   });
 
 });
