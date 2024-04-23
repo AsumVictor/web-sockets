@@ -26,6 +26,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .bottom_input input {
@@ -33,6 +34,13 @@ body {
   outline: none;
   padding: 6px 4px;
 }
+
+.bottom_input .room {
+    width: 90%;
+    outline: none;
+    padding: 6px 4px;
+  }
+  
 
 .bottom_input button {
   width: 30%;
