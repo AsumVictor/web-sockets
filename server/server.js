@@ -21,7 +21,13 @@ io.on("connection", (socket) => {
     callback("You have join the room");
   });
 
-  socket.on("ping", (n) => {
-    console.log(n);
+  socket.on("user-typing", (name, room) => {
+    console.log(`${name} Start Typing...`);
+    socket.broadcast.emit("recieve-typing", name);
+  });
+
+  socket.on("stop-typing", (name, room) => {
+    console.log(`${name} stop Typing...`);
+    socket.broadcast.emit("stop-typing", name);
   });
 });

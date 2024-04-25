@@ -17,6 +17,16 @@ socket.on("recieve-message", (message) => {
   printScreen(message, "blue");
 });
 
+socket.on('recieve-typing', (name)=>{
+    printScreen(`${name} start Typing`, "blue");
+    console.log(`${name} start Typing`)
+})
+
+socket.on('stop-typing', (name)=>{
+    printScreen(`${name} stop Typing`, "red");
+    console.log(`${name} stop Typing`)
+})
+
 function sendMessage() {
   if (input.value.trim() == null) return;
   socket.emit("send-message", {
@@ -36,10 +46,19 @@ function joinRoom() {
   });
 }
 
-let C = 0;
-setInterval(() => {
-  socket.volatile.emit("ping", C++);
-}, 100);
+input.addEventListener('focus', (e)=>{
+   socket.emit("user-typing", socket.id, room.value );
+
+})
+
+input.addEventListener('blur', (e)=>{
+    socket.emit("stop-typing", socket.id, room.value );
+})
+
+// let C = 0;
+// setInterval(() => {
+//   socket.volatile.emit("ping", C++);
+// }, 100);
 
 sendBtn.addEventListener("click", sendMessage);
 join.addEventListener("click", joinRoom);
