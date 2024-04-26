@@ -6,7 +6,7 @@ const join = document.querySelector(".bottom_input .join");
 
 import { io } from "socket.io-client";
 
-const socket = io("http://localhost:4000");
+const socket = io("http://localhost:3009");
 
 socket.on("connect", () => {
   printScreen(`You have connected with ${socket.id}`, "green");
